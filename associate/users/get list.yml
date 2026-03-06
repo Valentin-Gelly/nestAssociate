@@ -1,0 +1,17 @@
+info:
+  name: get list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{localhost}}/api/users"
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MDRhMTAxMS1lNmJlLTQyZGEtOGQ0OS1mYTA1ZWY5YWQxMDYiLCJlbWFpbCI6ImpvaG4uZG9lQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3Mjc4NzQyMywiZXhwIjoxNzcyODczODIzfQ.ZD82GHkjHv7iXIQdaBMllXI-lqhIiksOzAykzOqv39w
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

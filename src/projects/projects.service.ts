@@ -1,26 +1,35 @@
 import { Injectable } from '@nestjs/common';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
+import { Project } from './entities/project.entity';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository, FindOptionsRelations } from 'typeorm';
 
 @Injectable()
 export class ProjectsService {
+
+  constructor(
+    @InjectRepository(Project)
+    private projectRepository: Repository<Project>,
+  ) {}
+
   create(createProjectDto: CreateProjectDto) {
-    return 'This action adds a new project';
+    return this.projectRepository.save(createProjectDto);
   }
 
-  findAll() {
-    return `This action returns all projects`;
+  findAll(options?: { relations?: any }) {
+    return this.projectRepository.find(options || {});
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} project`;
+  findOne(id: string, options?: { relations?: any }) {
+    return this.projectRepository.findOne({where: {id}, ...options});
   }
 
-  update(id: number, updateProjectDto: UpdateProjectDto) {
-    return `This action updates a #${id} project`;
+  update(id: string, updateProjectDto: UpdateProjectDto) {
+    return this.projectRepository.update(id, updateProjectDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} project`;
+  remove(id: string) {
+    return this.projectRepository.delete(id);
   }
 }

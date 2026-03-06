@@ -1,0 +1,17 @@
+info:
+  name: delete project
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{localhost}}/api/projects/b73346cd-485d-41b1-aeab-16c4698fcaf4"
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiMDI2YjliNS1hNmMwLTQxMmUtYjg1Mi03M2NjYjQwZTlkYWEiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3Mjc5MTUxMiwiZXhwIjoxNzcyODc3OTEyfQ.rLPKEkzLeueqExmRfxb3szYiaAYOqi1LakGp8g1PV6k
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

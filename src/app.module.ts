@@ -11,6 +11,7 @@ import { AuthModule } from './auth/auth.module';
 import { JwtModule } from '@nestjs/jwt';
 import { AuthGuard } from './auth/auth.guard';
 import { ProjectsModule } from './projects/projects.module';
+import { CategoryModule } from './category/category.module';
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ dotenv.config();
     UsersModule,
     AuthModule,
     ProjectsModule,
+    CategoryModule,
   ],
   controllers: [AppController],
   providers: [AppService, AuthGuard],

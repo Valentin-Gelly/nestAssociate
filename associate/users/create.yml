@@ -1,0 +1,23 @@
+info:
+  name: create
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{localhost}}/api/users"
+  body:
+    type: json
+    data: |-
+      {
+        "email": "john.doe@gmail.com",
+        "password": "$Password0",
+        "role": "admin"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

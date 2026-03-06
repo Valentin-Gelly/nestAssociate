@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Project } from 'src/projects/entities/project.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 export enum UserRole {
   ADMIN = 'admin',
@@ -38,4 +39,7 @@ export class User {
 
   @Column()
   createdAt: Date;
+
+  @OneToMany(()=> Project, (project) => project.id)
+  projects: Project
 }

@@ -5,6 +5,7 @@ import {
   FastifyAdapter,
 } from '@nestjs/platform-fastify';
 import { AppDataSource } from './config/datasource';
+declare const module: any;
 
 async function bootstrap() {
   await AppDataSource.initialize()
@@ -20,5 +21,6 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
   await app.listen(process.env.PORT ?? 3000);
+  
 }
 bootstrap();
