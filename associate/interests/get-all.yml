@@ -6,7 +6,9 @@ info:
 http:
   method: GET
   url: "{{localhost}}/interests"
-  auth: none
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzMWNhNTYzOS0wZmI2LTRhZDAtYTYwOC1iYWI3NmVkZWNjODIiLCJlbWFpbCI6ImpvaG4uZG9lQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NTExOTQ1MiwiZXhwIjoxNzc1MjA1ODUyfQ.tZGQBxC3mKEuvM6l-TMfe1ptLRHI3WfYvPzlLtHfKko
 
 settings:
   encodeUrl: true

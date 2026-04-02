@@ -20,30 +20,32 @@ export class InvestmentsController {
     if (!currentUser || currentUser.role !== UserRole.INVESTOR) {
       throw new Error('Permission denied');
     }
-    (createInvestmentDto as any).userId = { id: currentUser.sub };
+    (createInvestmentDto as any).user = { id: currentUser.sub };
     return this.investmentsService.create(createInvestmentDto);
   }
 
   @Get()
-  @Roles(UserRole.INVESTOR)
+  @Roles(UserRole.INVESTOR, UserRole.ADMIN)
   @UseGuards(AuthGuard, RolesGuard)
   findAllInvestmentsForOwner(@Req() req) {
     const currentUser = (req as any).user;
-    if (!currentUser || currentUser.role !== UserRole.INVESTOR) {
-      throw new Error('Permission denied');
-    }
-    return this.investmentsService.findAllInvestmentsForOwner({ where: { userId: { id: currentUser.sub } } });
+    return this.investmentsService.findAllInvestmentsForOwner({
+      where: { user: { id: currentUser.sub } },
+      relations: ['user', 'project'],
+    });
   }
 
-  @Get(':projectId')
-  @Roles(UserRole.ENTREPRENEUR)
+  @Get('/project/:projectId')
   @UseGuards(AuthGuard, RolesGuard)
   findAllInvestmentForProject(@Req() req) {
     const currentUser = (req as any).user;
-    if (!currentUser || currentUser.role !== UserRole.ENTREPRENEUR) {
+    if (!currentUser) {
       throw new Error('Permission denied');
     }
-    return this.investmentsService.findAllInvestmentsForOwner({ where: { projectId: { id: req.params.projectId } } });
+    return this.investmentsService.findAllInvestmentsForOwner({
+      where: { project: { id: req.params.projectId } },
+      relations: ['user', 'project'],
+    });
   }
 
   @Delete(':id')

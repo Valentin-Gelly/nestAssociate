@@ -21,39 +21,5 @@ export class UsersInterestsController {
     private readonly interestsService: InterestsService,
   ) {}
 
-  @Get()
-  async getUserInterests(@Req() req: Request) {
-    const currentUser = (req as any).user;
-    return this.usersService.findInterests(currentUser.sub);
-  }
-
-  @Post()
-  async setUserInterests(
-    @Req() req: Request,
-    @Body('interestIds') interestIds: string[],
-    @Body('interestNames') interestNames: string[],
-  ) {
-    const currentUser = (req as any).user;
-    const ids = interestIds || [];
-    const names = interestNames || [];
-
-    let interests: Interest[] = [];
-
-    if (ids.length) {
-      interests = await this.interestsService.findByIds(ids);
-    }
-
-    if (names.length) {
-      const created = await this.interestsService.createMany(names);
-      interests = [...interests, ...created];
-    }
-
-    if (!interests.length) {
-      throw new BadRequestException(
-        'At least one interest id or name must be provided',
-      );
-    }
-
-    return this.usersService.assignInterests(currentUser.sub, interests);
-  }
+ 
 }

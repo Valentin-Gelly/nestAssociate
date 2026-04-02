@@ -6,9 +6,9 @@ info:
 http:
   method: GET
   url: "{{localhost}}/projects/recommended"
-  headers:
-    Authorization: "Bearer {{token}}"
-  auth: inherit
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNWVkYTEwYi0zZjRmLTRhMTctYmFjOS04NGJmY2E2Y2ZhNTgiLCJlbWFpbCI6ImludmVzdG9yQGludmVzdC5jb20iLCJyb2xlIjoiaW52ZXN0b3IiLCJpYXQiOjE3NzUxMTkwMjYsImV4cCI6MTc3NTIwNTQyNn0.zy2i9MLpM9aNfRjd1jL1JH-Y1CavQb1nC4Lb3gYb6Z0
 
 settings:
   encodeUrl: true

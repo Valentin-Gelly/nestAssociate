@@ -8,7 +8,7 @@ http:
   url: "{{locahost}}/api/projects"
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiMDI2YjliNS1hNmMwLTQxMmUtYjg1Mi03M2NjYjQwZTlkYWEiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NTExMTE0MSwiZXhwIjoxNzc1MTk3NTQxfQ.jCy0_pY9AAi3czPxUsDRDcWQ0evWGJHLUGkQZs4mZJg
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzMWNhNTYzOS0wZmI2LTRhZDAtYTYwOC1iYWI3NmVkZWNjODIiLCJlbWFpbCI6ImpvaG4uZG9lQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NTExOTQ1MiwiZXhwIjoxNzc1MjA1ODUyfQ.tZGQBxC3mKEuvM6l-TMfe1ptLRHI3WfYvPzlLtHfKko
 
 settings:
   encodeUrl: true

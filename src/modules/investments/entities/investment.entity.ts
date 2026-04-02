@@ -1,6 +1,6 @@
 import { Project } from "src/modules/projects/entities/project.entity";
 import { User } from "src/modules/users/entities/user.entity";
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Investment {
@@ -10,9 +10,9 @@ export class Investment {
     @Column()
     amount: number;
 
-    @OneToOne(() => Project, (project) => project.investments)
+    @ManyToOne(() => Project, (project) => project.investments)
     project: Project;
 
-    @OneToOne(() => User, (user) => user.investments)
+    @ManyToOne(() => User, (user) => user.investments)
     user: User;
 }

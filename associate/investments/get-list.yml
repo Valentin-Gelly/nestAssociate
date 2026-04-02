@@ -6,9 +6,9 @@ info:
 http:
   method: GET
   url: "{{localhost}}/investments"
-  headers:
-    Authorization: "Bearer {{token}}"
-  auth: inherit
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhY2JhOWNmZi0xZGVjLTQ5NmMtOGE0Mi1jMmNiNjFlNWIxMDYiLCJlbWFpbCI6ImludmVzdG9yQGludmVzdC5jb20iLCJyb2xlIjoiaW52ZXN0b3IiLCJpYXQiOjE3NzUxMTk2NzMsImV4cCI6MTc3NTIwNjA3M30.j98QMki_Yuw4wUWIdaT3gLpeG3oIvZt4bT0UlkPnHkU
 
 settings:
   encodeUrl: true

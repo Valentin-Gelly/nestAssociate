@@ -6,8 +6,6 @@ info:
 http:
   method: POST
   url: "{{localhost}}/investments"
-  headers:
-    Authorization: "Bearer {{token}}"
   body:
     type: json
     data: |-
@@ -15,7 +13,9 @@ http:
         "amount": 1000,
         "projectId": { "id": "{{projectId}}" }
       }
-  auth: inherit
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTNlMWEyNS1iN2MwLTQ1MTEtYTA0OC01OTQ2ZTk3YzM0M2MiLCJlbWFpbCI6ImVudHJlcHJlbmV1ckBlbnRyZXByZW5ldXIuY29tIiwicm9sZSI6ImVudHJlcHJlbmV1ciIsImlhdCI6MTc3NTExODk5MiwiZXhwIjoxNzc1MjA1MzkyfQ.88gJFzD5mGIBpxbqy9VV7UhnjvslynnPZ_P3D11j2v4
 
 settings:
   encodeUrl: true

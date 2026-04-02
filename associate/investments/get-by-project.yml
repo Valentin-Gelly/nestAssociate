@@ -6,9 +6,14 @@ info:
 http:
   method: GET
   url: "{{localhost}}/investments/{{projectId}}"
-  headers:
-    Authorization: "Bearer {{token}}"
-  auth: inherit
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmNGM4MGZlMC1mNmMwLTQzMmEtYjZmZi1lMDBmMWY5YjJlMTQiLCJlbWFpbCI6ImVudHJlcHJlbmV1ckBlbnRyZXByZW5ldXIuY29tIiwicm9sZSI6ImVudHJlcHJlbmV1ciIsImlhdCI6MTc3NTExOTczMywiZXhwIjoxNzc1MjA2MTMzfQ.bajvWPY0ylZvCZJATjGpvXdlXqRufDrRqGoEsVNdYn8
+
+runtime:
+  variables:
+    - name: projectId
+      value: 057e6a1d-0697-413d-90ec-28ab4d3507b1
 
 settings:
   encodeUrl: true
