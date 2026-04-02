@@ -5,8 +5,10 @@ info:
 
 http:
   method: GET
-  url: "{{localhost}}/api/projects"
-  auth: inherit
+  url: "{{locahost}}/api/projects"
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiMDI2YjliNS1hNmMwLTQxMmUtYjg1Mi03M2NjYjQwZTlkYWEiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NTExMTE0MSwiZXhwIjoxNzc1MTk3NTQxfQ.jCy0_pY9AAi3czPxUsDRDcWQ0evWGJHLUGkQZs4mZJg
 
 settings:
   encodeUrl: true

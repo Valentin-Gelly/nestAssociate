@@ -5,7 +5,7 @@ import {
   ForbiddenException,
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { ROLES_KEY } from '../roles/roles.decorator';
+import { ROLES_KEY } from '../modules/roles/roles.decorator';
 
 @Injectable()
 export class RolesGuard implements CanActivate {
@@ -18,7 +18,7 @@ export class RolesGuard implements CanActivate {
     );
 
     if (!requiredRoles) {
-      return true; // Pas de rôle requis
+      return true;
     }
 
     const { user } = context.switchToHttp().getRequest();

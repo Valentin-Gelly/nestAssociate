@@ -5,8 +5,16 @@ info:
 
 http:
   method: PATCH
-  url: "{{localhost}}/api/projects"
-  auth: inherit
+  url: "{{localhost}}/api/projects/b73346cd-485d-41b1-aeab-16c4698fcaf4"
+  body:
+    type: json
+    data: |-
+      {
+        "title":"premier projet nom modifié"
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiMDI2YjliNS1hNmMwLTQxMmUtYjg1Mi03M2NjYjQwZTlkYWEiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3Mjc5MTUxMiwiZXhwIjoxNzcyODc3OTEyfQ.rLPKEkzLeueqExmRfxb3szYiaAYOqi1LakGp8g1PV6k
 
 settings:
   encodeUrl: true

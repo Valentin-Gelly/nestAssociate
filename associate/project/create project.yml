@@ -6,7 +6,18 @@ info:
 http:
   method: POST
   url: "{{localhost}}/api/projects"
-  auth: inherit
+  body:
+    type: json
+    data: |-
+      {
+        "title": "second projet",
+        "description": "description du second projet",
+        "budget": 500000,
+        "category": "14928bad-31c4-43ad-ae99-526f3c70be57"
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MDRhMTAxMS1lNmJlLTQyZGEtOGQ0OS1mYTA1ZWY5YWQxMDYiLCJlbWFpbCI6ImpvaG4uZG9lQGdtYWlsLmNvbSIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE3NzI3OTA3MzQsImV4cCI6MTc3Mjg3NzEzNH0.VvMt_2mLHBn9TIhjYMGiB8oSc0z2d6hHLkppA34qOkI
 
 settings:
   encodeUrl: true

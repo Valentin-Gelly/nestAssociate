@@ -11,6 +11,7 @@ async function bootstrap() {
   await AppDataSource.initialize()
     .then(() => {
       console.log('Data Source has been initialized!');
+      console.log('listening on port ' + (process.env.PORT ?? 3000));
     })
     .catch((err) => {
       console.error('Error during Data Source initialization:', err);
@@ -21,6 +22,5 @@ async function bootstrap() {
     new FastifyAdapter(),
   );
   await app.listen(process.env.PORT ?? 3000);
-  
 }
 bootstrap();

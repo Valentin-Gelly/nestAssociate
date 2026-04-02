@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{localhost}}/api/projects"
+  url: "{{localhost}}/api/projects/b73346cd-485d-41b1-aeab-16c4698fcaf4"
   auth:
     type: bearer
     token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MDRhMTAxMS1lNmJlLTQyZGEtOGQ0OS1mYTA1ZWY5YWQxMDYiLCJlbWFpbCI6ImpvaG4uZG9lQGdtYWlsLmNvbSIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE3NzI3OTA3MzQsImV4cCI6MTc3Mjg3NzEzNH0.VvMt_2mLHBn9TIhjYMGiB8oSc0z2d6hHLkppA34qOkI
