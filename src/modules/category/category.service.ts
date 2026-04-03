@@ -32,4 +32,10 @@ export class CategoryService {
   remove(id: string) {
     return this.categoryRepository.delete(id);
   }
+
+  async findByName(name: string) {
+    return this.categoryRepository.findOne({
+      where: { name },
+    });
+  }
 }

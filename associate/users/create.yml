@@ -14,7 +14,9 @@ http:
         "password": "$Password0",
         "role": "admin"
       }
-  auth: inherit
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzQ5ODJhNS0yOWFkLTRlMWEtYTZkYS1mYjE4ODg1YzA4YWYiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NTExOTQwMywiZXhwIjoxNzc1MjA1ODAzfQ.2H49Oq5_F4T9WQ44IhUIvxSk3fgLUMbikIIPf6J7RVk
 
 settings:
   encodeUrl: true

@@ -30,7 +30,7 @@ export class ProjectsController {
   ) {}
 
   @Post()
-  @Roles(UserRole.ENTREPRENEUR)
+  @Roles(UserRole.ENTREPRENEUR, UserRole.ADMIN)
   @UseGuards(AuthGuard, RolesGuard)
   async create(
     @Body() createProjectDto: CreateProjectDto,
@@ -43,14 +43,6 @@ export class ProjectsController {
       );
     }
     (createProjectDto as any).ownerId = { id: currentUser.sub };
-    if (createProjectDto.category) {
-      const category = await this.categoryService.findOne(
-        createProjectDto.category.id,
-      );
-      if (!category) {
-        throw new Error('Category not found');
-      }
-    }
     return this.projectsService.create(createProjectDto);
   }
 

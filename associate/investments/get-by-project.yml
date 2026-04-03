@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{localhost}}/investments/{{projectId}}"
+  url: "{{localhost}}/investments/project/{{projectId}}"
   auth:
     type: bearer
     token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmNGM4MGZlMC1mNmMwLTQzMmEtYjZmZi1lMDBmMWY5YjJlMTQiLCJlbWFpbCI6ImVudHJlcHJlbmV1ckBlbnRyZXByZW5ldXIuY29tIiwicm9sZSI6ImVudHJlcHJlbmV1ciIsImlhdCI6MTc3NTExOTczMywiZXhwIjoxNzc1MjA2MTMzfQ.bajvWPY0ylZvCZJATjGpvXdlXqRufDrRqGoEsVNdYn8

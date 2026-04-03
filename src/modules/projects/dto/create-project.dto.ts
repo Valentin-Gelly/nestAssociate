@@ -4,5 +4,5 @@ export class CreateProjectDto {
   title: string;
   description?: string;
   budget: number;
-  category: Category;
+  category: string;
 }

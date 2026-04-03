@@ -5,19 +5,19 @@ info:
 
 http:
   method: POST
-  url: "{{localhost}}/api/projects"
+  url: "{{locahost}}/api/projects"
   body:
     type: json
     data: |-
       {
-        "title": "second projet",
+        "title": "second projet sqdsdfsdf",
         "description": "description du second projet",
         "budget": 500000,
-        "category": "14928bad-31c4-43ad-ae99-526f3c70be57"
+        "category": "Finance"
       }
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MDRhMTAxMS1lNmJlLTQyZGEtOGQ0OS1mYTA1ZWY5YWQxMDYiLCJlbWFpbCI6ImpvaG4uZG9lQGdtYWlsLmNvbSIsInJvbGUiOiJlbnRyZXByZW5ldXIiLCJpYXQiOjE3NzI3OTA3MzQsImV4cCI6MTc3Mjg3NzEzNH0.VvMt_2mLHBn9TIhjYMGiB8oSc0z2d6hHLkppA34qOkI
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmNGM4MGZlMC1mNmMwLTQzMmEtYjZmZi1lMDBmMWY5YjJlMTQiLCJlbWFpbCI6ImVudHJlcHJlbmV1ckBlbnRyZXByZW5ldXIuY29tIiwicm9sZSI6ImVudHJlcHJlbmV1ciIsImlhdCI6MTc3NTE5OTQ1OSwiZXhwIjoxNzc1Mjg1ODU5fQ.395rhRPfM4zuTtGwmxKAMn1MX2UKJAXZUUcs6-SXwhM
 
 settings:
   encodeUrl: true

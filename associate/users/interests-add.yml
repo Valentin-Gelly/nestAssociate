@@ -5,16 +5,21 @@ info:
 
 http:
   method: POST
-  url: "{{localhost}}/users/interests"
+  url: "{{locahost}}/api/users/interests"
   body:
     type: json
     data: |-
       {
-        "interestNames": ["Technologie", "Écologie", "Finance"]
+        "interestNames": ["Technologie", "Écologie", "Finance", "ecole"]
       }
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzMWNhNTYzOS0wZmI2LTRhZDAtYTYwOC1iYWI3NmVkZWNjODIiLCJlbWFpbCI6ImpvaG4uZG9lQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3NTExOTQ1MiwiZXhwIjoxNzc1MjA1ODUyfQ.tZGQBxC3mKEuvM6l-TMfe1ptLRHI3WfYvPzlLtHfKko
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmNGM4MGZlMC1mNmMwLTQzMmEtYjZmZi1lMDBmMWY5YjJlMTQiLCJlbWFpbCI6ImVudHJlcHJlbmV1ckBlbnRyZXByZW5ldXIuY29tIiwicm9sZSI6ImVudHJlcHJlbmV1ciIsImlhdCI6MTc3NTE5OTQ1OSwiZXhwIjoxNzc1Mjg1ODU5fQ.395rhRPfM4zuTtGwmxKAMn1MX2UKJAXZUUcs6-SXwhM
+
+runtime:
+  variables:
+    - name: localhost
+      value: http://localhost:3000
 
 settings:
   encodeUrl: true

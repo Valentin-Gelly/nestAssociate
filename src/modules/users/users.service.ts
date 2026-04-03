@@ -55,7 +55,12 @@ export class UsersService {
       return null;
     }
 
-    user.interests = interests;
+    interests.forEach((interest) => {
+      if (!user.interests.some((i) => i.id === interest.id)) {
+        user.interests.push(interest);
+      }
+    });
+
     return this.userRepository.save(user);
   }
 

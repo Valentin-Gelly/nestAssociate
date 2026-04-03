@@ -59,27 +59,21 @@ export class UsersController {
   }
 
 
- @Get()
+ @Get('interests')
   async getUserInterests(@Req() req: Request) {
     const currentUser = (req as any).user;
     return this.usersService.findInterests(currentUser.sub);
   }
 
-  @Post()
+  @Post('interests')
   async setUserInterests(
     @Req() req: Request,
-    @Body('interestIds') interestIds: string[],
     @Body('interestNames') interestNames: string[],
   ) {
-    const currentUser = (req as any).user;
-    const ids = interestIds || [];
+    const currentUser = (req as any);
     const names = interestNames || [];
 
     let interests: Interest[] = [];
-
-    if (ids.length) {
-      interests = await this.interestsService.findByIds(ids);
-    }
 
     if (names.length) {
       const created = await this.interestsService.createMany(names);

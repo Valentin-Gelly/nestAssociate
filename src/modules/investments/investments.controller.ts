@@ -13,11 +13,11 @@ export class InvestmentsController {
   constructor(private readonly investmentsService: InvestmentsService) {}
 
   @Post()
-  @Roles(UserRole.INVESTOR)
+  @Roles(UserRole.INVESTOR, UserRole.ADMIN)
   @UseGuards(AuthGuard, RolesGuard)
   create(@Body() createInvestmentDto: CreateInvestmentDto, @Req() req) {
     const currentUser = (req as any).user;
-    if (!currentUser || currentUser.role !== UserRole.INVESTOR) {
+    if (!currentUser || (currentUser.role !== UserRole.INVESTOR && currentUser.role !== UserRole.ADMIN)) {
       throw new Error('Permission denied');
     }
     (createInvestmentDto as any).user = { id: currentUser.sub };
@@ -36,7 +36,7 @@ export class InvestmentsController {
   }
 
   @Get('/project/:projectId')
-  @UseGuards(AuthGuard, RolesGuard)
+  @UseGuards(AuthGuard)
   findAllInvestmentForProject(@Req() req) {
     const currentUser = (req as any).user;
     if (!currentUser) {
