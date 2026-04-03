@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{localhost}}/api/users/{{userId}}"
+  url: "{{locahost}}/api/users/{{userId}}"
   auth:
     type: bearer
     token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNWVkYTEwYi0zZjRmLTRhMTctYmFjOS04NGJmY2E2Y2ZhNTgiLCJlbWFpbCI6ImludmVzdG9yQGludmVzdC5jb20iLCJyb2xlIjoiaW52ZXN0b3IiLCJpYXQiOjE3NzUxMTkwMjYsImV4cCI6MTc3NTIwNTQyNn0.zy2i9MLpM9aNfRjd1jL1JH-Y1CavQb1nC4Lb3gYb6Z0
